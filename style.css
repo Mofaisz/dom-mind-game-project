@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+main.container{
+    width: 100%;
+    background-color: #4f6fd1;
+    min-height: 100vh;
+    padding: 40px 5px 10px 5px;
+    position: relative;
+}
+
+
+
+main.container section.overlay_success[data-stats="false"]{
+    display: none;
+}
+
+main.container section.overlay_success{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+main.container section.overlay_success .success_wrapper{
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #6589F9;
+    text-align: center;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+main.container section.overlay_success .success_wrapper h2{
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+main.container section.overlay_success .success_wrapper p{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+main.container section.overlay_success .success_wrapper p span{
+    margin-left: 10px;
+}
+
+main.container section.overlay_success .success_wrapper button{
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+main.container section.game_grid{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(4 , 1fr);
+    gap: 10px;
+    max-width: 990px;
+    min-height: 700px;
+    margin: auto;
+}
+
+main.container section.game_grid .card {
+    margin: 5px;
+    background-color: #6589f9;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    transition: all 0.4s linear;
+    transform-style: preserve-3d;
+    /* perspective: 1000px;  */
+    border-radius: 10px;
+    /* overflow: hidden; */
+    cursor: pointer;
+}
+
+main.container section.game_grid .card.active{
+  transform: rotateY(180deg);
+}
+
+main.container section.game_grid .card.counted{
+  transform: rotateY(180deg);
+}
+
+main.container section.game_grid .card.counted .back{
+  background-image: none !important;
+}
+
+
+main.container section.game_grid .card .front{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://taniarascia.github.io/memory/img/question.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+main.container section.game_grid .card .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
